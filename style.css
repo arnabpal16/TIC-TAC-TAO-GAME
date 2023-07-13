@@ -1,0 +1,106 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('BG.jpg');
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.game-info{
+    color: white;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: .5rem 3rem;
+    /* text-align: center; */
+}
+
+.game{
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 90%;
+    max-width: 20rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    aspect-ratio: 1/1;
+}
+
+.box{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1,.box2,.box4,.box5{
+    border-bottom:1px solid white;
+    border-right:1px solid white;
+
+}
+
+.box3,.box6{
+    border-bottom: 1px solid white;
+}
+
+.box7,.box8{
+    border-right: 1px solid white;
+}
+
+.btn{
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    /* display: none; */
+}
+
+.btn.active{
+    display: flex;
+}
+
+.win{
+    background-color: green;
+}
+/*making it responsive*/
+
+@media only screen and (max-width: 360px) {
+    .game-info{
+        visibility: hidden;
+    }
+    .game-info::after{
+        content: "X";
+        visibility: visible;
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: .5rem 1rem;
+        border-radius: 1rem;
+    }
+}
